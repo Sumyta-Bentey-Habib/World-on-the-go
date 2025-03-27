@@ -7,13 +7,20 @@ const Countries = ({ countriesPromise }) => {
     const countries= use( countriesPromise );
     const handelVisitedCoutries = (country)=>{
           console.log('country visited',country);
+          const newVisitedCountries =[...visitedCountries,country];
+          setVisitedCountries(newVisitedCountries);
 
     }
     // console.log(countries);
     return (
         <div>
             <h2>Traveling Countries: {countries.length} </h2>
-            <h3>Travel so fer: </h3>
+            <h3>Travel so fer:{visitedCountries.length} </h3>
+            <ol>
+                {
+                    visitedCountries.map(country => <li>{country.name.common}</li>)
+                }
+            </ol>
             <div className='countries'>
             {
                 countries.map(country=><Country 
