@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Country.css'
 
-const Country = ({country}) => {
+const Country = ({country,handelVisitedCoutries}) => {
     const [visited,setVisited]=useState (false);
 
     const handelVisited =()=>{
@@ -14,7 +14,7 @@ const Country = ({country}) => {
             setVisited(true);
         }
 
-        
+        handelVisitedCoutries(country);
     }
     return (
         <div className={`country ${visited && 'country-visited'}`}>
