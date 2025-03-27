@@ -1,7 +1,7 @@
 
 import { Suspense } from 'react';
 import './App.css'
-import Countries from './components/Countries'
+import Countries from './components/countries/Countries'
 
 const countriesPromise =fetch('https://restcountries.com/v3.1/all')
 .then(res=>res.json());
